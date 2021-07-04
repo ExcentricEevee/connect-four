@@ -15,8 +15,22 @@ class Board
         result
     end
 
+    def show
+        puts <<-HEREDOC
+            #{grid}
+        HEREDOC
+    end
+
+    def clear
+       initialize 
+    end
+
     def column_full?(input)
         grid[5][input] != nil
+    end
+
+    def game_over?(plr_color)
+        four_in_a_row?(plr_color) || four_in_a_column?(plr_color) || four_in_a_diagonal?(plr_color)
     end
 
     def win_check(sequence, color)

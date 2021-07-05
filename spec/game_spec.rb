@@ -161,15 +161,15 @@ describe Game do
 
         context 'when a player picks column 0, and the first row is taken' do
             before do
-                game_select.p1.set_color('Y')
-                board_selection.grid[0].each { |index| index = 'R' }
+                game_select.p1.set_color('B')
+                board_selection.grid[0][0] = 'R'
             end
 
             it "should put the player's color on the second row of the column" do
                 input = 0
                 color = game_select.p1.color
                 game_select.select_column(input, color)
-                expect(board_selection.grid[1][input]).to eq('Y')
+                expect(board_selection.grid[1][input]).to eq('B')
             end
         end
     end

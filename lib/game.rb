@@ -5,6 +5,7 @@ class Game
         @board = board
         @p1 = player1
         @p2 = player2
+        #starts on p2 so it switches to p1 on first turn
         @current_player = p2
     end
 
@@ -63,10 +64,9 @@ class Game
         return input.match?(/^[0-7]$/)
     end
 
-    #mistakenly puts the player's color IN THE ENTIRE COLUMN instead of just one piece
     def select_column(input, color)
         board.grid.each do |row|
-            if row[input] == nil
+            if row[input] == ' '
                 row[input] = color
                 break
             end

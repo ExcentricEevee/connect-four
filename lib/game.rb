@@ -61,7 +61,7 @@ class Game
     end
 
     def verify_input(input)
-        return input.match?(/^[0-7]$/)
+        return input.match?(/^[1-7]$/)
     end
 
     def select_column(input, color)
@@ -87,10 +87,10 @@ class Game
         puts "Would you like to play again? (y/n)"
         loop do
             input = gets.chomp
-            if input == 'y'
+            if input == 'y' || input == 'yes'
                 board.clear
                 play
-            elsif input == 'n'
+            elsif input == 'n' || input == 'no'
                 exit
             else
                 puts "For the love of god just put 'y' or 'n' sobs"

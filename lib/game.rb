@@ -61,7 +61,7 @@ class Game
     end
 
     def verify_input(input)
-        return input.match?(/^[0-7]$/)
+        return input.match?(/^[1-7]$/)
     end
 
     def select_column(input, color)

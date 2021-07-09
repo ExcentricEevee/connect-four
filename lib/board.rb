@@ -41,7 +41,7 @@ class Board
     end
 
     def column_full?(input)
-        grid[5][input] != ' '
+        grid[5][input-1] != ' '
     end
 
     def game_over?(plr_color)

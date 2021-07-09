@@ -152,10 +152,11 @@ describe Game do
             end
 
             it "should put the player's color on the bottom most row in the column" do
-                input = 0
+                input = 1
+                index = 0
                 color = game_select.p1.color
                 game_select.select_column(input, color)
-                expect(board_selection.grid[0][input]).to eq('R')
+                expect(board_selection.grid[0][index]).to eq('R')
             end
         end
 
@@ -166,10 +167,11 @@ describe Game do
             end
 
             it "should put the player's color on the second row of the column" do
-                input = 0
+                input = 1
+                index = 0
                 color = game_select.p1.color
                 game_select.select_column(input, color)
-                expect(board_selection.grid[1][input]).to eq('B')
+                expect(board_selection.grid[1][index]).to eq('B')
             end
         end
     end

@@ -10,7 +10,7 @@ class Game
     end
 
     def start
-        puts "Welcome to Connect Four!"
+        puts "Welcome to Connect Four!\n\n"
         setup_players
         play
     end
@@ -29,12 +29,12 @@ class Game
         puts "Player 1, what is your name?"
         p1.name = gets.chomp
         p1.color = 'R'
-        puts "Welcome #{p1.name}! Your color is Red.\n\n"
+        puts "Welcome #{p1.name}! Your color is (R)ed.\n\n"
 
         puts "Player 2, what is your name?"
         p2.name = gets.chomp
         p2.color = 'B'
-        puts "Hello to you too #{p2.name}! Your color is Black.\n\n"
+        puts "Hello to you too #{p2.name}! Your color is (B)lack.\n\n"
     end
 
     def switch_current_player
@@ -65,6 +65,8 @@ class Game
     end
 
     def select_column(input, color)
+        #We are expecting the player to choose between 1-7, rather than 0-6
+        input = input - 1
         board.grid.each do |row|
             if row[input] == ' '
                 row[input] = color
@@ -99,7 +101,7 @@ class Game
     private
 
     def player_input
-        puts "Pick a number between 0 and 7:"
+        puts "Pick a number between 1 and 7:"
         gets.chomp
     end
 end
